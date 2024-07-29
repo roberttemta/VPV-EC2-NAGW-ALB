@@ -23,11 +23,10 @@ resource "aws_security_group" "sg-alb" {
   }
 
   tags = {
-    env  = var.ENVIRONMENT
     env  = "Dev"
     name = "ALB-sg"
   }
 
-  //depends_on = [ aws_vpc.vpc1 ]
+  depends_on = [ aws_vpc.vpc1 ]
 
 }
