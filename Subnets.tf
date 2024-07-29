@@ -29,8 +29,8 @@ resource "aws_subnet" "public2" {
 resource "aws_subnet" "private1" {
   //availability_zone = "${var.REGION}a"
   availability_zone = "us-east-1a"
-  cidr_block = "10.0.3.0/24"
-  vpc_id     = aws_vpc.vpc1.id
+  cidr_block        = "10.0.3.0/24"
+  vpc_id            = aws_vpc.vpc1.id
 
   tags = {
     Name = "Alb-VPC-private-subnet-1a"
@@ -41,8 +41,8 @@ resource "aws_subnet" "private1" {
 resource "aws_subnet" "private2" {
   //availability_zone = "${var.REGION}b"
   availability_zone = "us-east-1b"
-  cidr_block = "10.0.4.0/24"
-  vpc_id     = aws_vpc.vpc1.id
+  cidr_block        = "10.0.4.0/24"
+  vpc_id            = aws_vpc.vpc1.id
 
   tags = {
     Name = "Alb-VPC-private-subnet-1b"
