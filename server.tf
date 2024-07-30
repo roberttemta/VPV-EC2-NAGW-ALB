@@ -6,8 +6,8 @@ resource "aws_instance" "server1" {
   //key_name      = aws_key_pair.aws_key.key_name
   user_data              = file("server-install.sh")
   vpc_security_group_ids = [aws_security_group.sg-inst.id]
-  subnet_id              = aws_subnet.private1.id
-  associate_public_ip_address = false
+  subnet_id              = aws_subnet.public1.id
+  associate_public_ip_address = true
   availability_zone      = "us-east-1a"
 
   tags = {
@@ -24,8 +24,8 @@ resource "aws_instance" "server2" {
   //key_name      = aws_key_pair.aws_key.key_name
   user_data              = file("server-install.sh")
   vpc_security_group_ids = [aws_security_group.sg-inst.id]
-  subnet_id              = aws_subnet.private2.id
-  associate_public_ip_address = false
+  subnet_id              = aws_subnet.public2.id
+  associate_public_ip_address = true
   availability_zone      = "us-east-1b"
 
   tags = {
